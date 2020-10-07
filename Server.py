@@ -94,11 +94,12 @@ def database(cmd, arg) -> str:
         f_record = found[12] + " " + found[2] + " " + found[5] + ", " + found[9]
         return f_record
     elif cmd == 'insert':
+        # Not working currently
         arg[2] = panda.to_datetime(arg[2])
         #arg = str(arg)
         slot = records + 2
-
-        temp_db = panda.DataFrame([slot,arg], columns=['MemberID','First Name','Last Name','Date of Birth'])
+        
+        temp_db = panda.DataFrame([arg], columns=['MemberID','First Name','Last Name','Date of Birth'])
         db.loc[slot] = temp_db[0]
         db.to_csv('database.csv')
         return 'Successfully Written'
