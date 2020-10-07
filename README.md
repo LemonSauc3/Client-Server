@@ -3,7 +3,7 @@ Basic Client-Server model using python, that takes commands and will proceed to 
 
 This project is based off a school assigment, where it is acting as a DBMS with a multi-client's connecting to one server on the localhost, and allowing the server to handle all of the requests.
 
-This project requires:
+This project requires these imports:
 * pandas
 * csv
 * random
@@ -18,6 +18,7 @@ Update | _string_ {update, MemberID, newFirstName, newLastName, newDoB}
 Delete | _int_ {delete, MemberID}
 PrintAll | _returns_ {All data in the csv}
 Print | _int n_ : _int m_ {returns n -> m of the csv}
+fill | _name_maker_ {appends a random name to "insert " + name_maker()}
 
 
 ## ToDo List:

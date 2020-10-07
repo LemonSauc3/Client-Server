@@ -21,7 +21,7 @@ def main():
         
         # Sending a random person to the server
         if user_message == RANDOM:
-            user_message = "Insert" + name_maker()
+            user_message = "Insert " + name_maker()
 
         # Disconnect handling
         if user_message == DISCONNECT:
