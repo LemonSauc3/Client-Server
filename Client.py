@@ -9,6 +9,7 @@ ADDR = (SERVER, PORT)
 RBYTE = 1024
 FORMAT = 'utf-8'
 DISCONNECT = 'quit'
+RANDOM = 'fill'
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 
@@ -18,6 +19,10 @@ def main():
     while connected:
         user_message = input(' -> ')
         
+        # Sending a random person to the server
+        if user_message == RANDOM:
+            user_message = "Insert" + name_maker()
+
         # Disconnect handling
         if user_message == DISCONNECT:
             connected = False
@@ -58,7 +63,7 @@ def name_maker() -> str:
     first_name = names[random.randint(0, len(names) - 1)]
     last_name = names[random.randint(0, len(names) - 1)]
     DoB = ""
-    day = random.randint(1, 28)
+    day = random.randint(1, 30)
     month = random.randint(1, 12)
     year = random.randint(1970, 2020)
     DoB = str(day) + "/" + str(month) + "/" + str(year)
